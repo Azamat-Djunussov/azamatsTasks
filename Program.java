@@ -28,8 +28,7 @@ public class Program {
             String result = null;
             String str_num = String.valueOf(n); // переводим целочисленное значение в строку
             char array_ch[] = str_num.toCharArray();// сохраняем строку в массив типа char
-            String array_classes[] = new String[12];// создаем строковый массив для хранения числовых значений
-            // для последующего распределения по классам:  billion_class,million_class,thousand_class,unit_class
+            String array_classes[] = new String[12];// создаем строковый массив для хранения числовых значений для последующего распределения по классам:  billion_class,million_class,thousand_class,unit_class
             int len_ch = array_ch.length;
             for (int i1 = 0; i1 < array_classes.length; i1++) {
                 array_classes[i1] = "0";
