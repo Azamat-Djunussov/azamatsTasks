@@ -1,6 +1,5 @@
-package matem2.task_171;
-
-import JAVA2.chapter_7.listing_19.IFTest;
+//package matem2.task_171;
+//import JAVA2.chapter_7.listing_19.IFTest;
 
 public class Program {
 
