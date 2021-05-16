@@ -1,14 +1,12 @@
-//package matem2.task_171;
-//import JAVA2.chapter_7.listing_19.IFTest;
-
 public class Program {
 
     static String arr_num_1[][] = {{"0",""},{"1","one"},{"2","two"},{"3","three"},{"4","four"},{"5","five"},{"6","six"},{"7","seven"},{"8","eight"},{"9","nine"},};
     static String arr_num_2[][] = {{"2","twenty"},{"3","thirty"},{"4","forty"},{"5","fifty"},{"6","sixty"},{"7","seventy"},{"8","eighty"},{"9","ninety"},};
     static String arr_num_3[][] = {{"11","eleven"},{"12","twelve"},{"13","thirteen"},{"14","fourteen"},{"15","fifteen"},{"16","sixteen"},{"17","seventeen"},{"18","eighteen"},{"19","nineteen"},};
 
-	// под классами числа понимаются: миллиардов, миллионов, тысяч, единиц.
-	// под под разрядом числа понимается: сотни, десятки, единицы. 
+	//Решение Джунусова Азамата.
+	// под классами числа понимаются: класс миллиардов, класс миллионов, класс  тысяч, класс единиц.
+	// под разрядом числа понимается: сотни, десятки, единицы. 
 
     public static void main(String[] args) {
         // 2_147_483_647 max int value
@@ -21,13 +19,10 @@ public class Program {
         System.out.println(n +" -> "+  ConvertNumberToString(n));
         n = -2_117_483_647; // четвертый тест
         System.out.println(n +" -> "+  ConvertNumberToString(n));
-
-
-
-    }// main
+	}// main
     //##################################################################################################
 //##################################################################################################
-    public static String ConvertNumberToString(int n){
+    public static String ConvertNumberToString(int n){// формируем классы числа
 
         if (2_117_483_647 >=n && 1 <= n ) {
             String result = null;
@@ -45,14 +40,14 @@ public class Program {
                 if (len_ch == 0) break;
             }
 
-            String billion_class = "";
-            String million_class = "";
-            String thousand_class = "";
-            String unit_class = "";
+            String billion_class = ""; // класс миллиардов
+            String million_class = ""; // класс миллионов
+            String thousand_class = ""; // класс тысяч
+            String unit_class = "";	// класс единиц
 
             int count_1 = 0;
             int count_2 = 0;
-            for (String i1 : array_classes) {
+            for (String i1 : array_classes) {// формируем классы числа
 //            System.out.print(i1 + " ");
                 if (count_1 != 0 && count_1 % 3 == 0) {
                     count_2++;
@@ -69,7 +64,7 @@ public class Program {
                 count_1++;
             }
 
-            if (false) {// проверка присвоения значений номеру класса
+            if (false) {// тест - проверка присвоения значений номеру класса 
                 System.out.println(billion_class + " billion");
                 System.out.println(million_class + " million");
                 System.out.println(thousand_class + " thousand");
@@ -89,7 +84,7 @@ public class Program {
             return "введите положительное число от 1 до 2_117_483_647";
     }
 
-    public static String digit_rank_fun(String str_1, String rank){// формируем разряды
+    public static String digit_rank_fun(String str_1, String rank){// формируем разряды числа
         String result = null;
         char[] array_result = str_1.toCharArray();
         String st_1 = String.valueOf(array_result[0]);// сотни
@@ -154,5 +149,3 @@ public class Program {
         }
     }
 }
-//two billion one hundred forty-seven million four hundred eighty-three thousand six hundred forty-seven
-//two billion one hundred seventeen million four hundred eighty-three thousand six hundred forty-seven
