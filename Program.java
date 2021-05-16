@@ -7,16 +7,25 @@ public class Program {
     static String arr_num_2[][] = {{"2","twenty"},{"3","thirty"},{"4","forty"},{"5","fifty"},{"6","sixty"},{"7","seventy"},{"8","eighty"},{"9","ninety"},};
     static String arr_num_3[][] = {{"11","eleven"},{"12","twelve"},{"13","thirteen"},{"14","fourteen"},{"15","fifteen"},{"16","sixteen"},{"17","seventeen"},{"18","eighteen"},{"19","nineteen"},};
 
+	// под классами числа понимаются: миллиардов, миллионов, тысяч, единиц.
+	// под под разрядом понимаются: сотни, десятки, единицы. 
+
     public static void main(String[] args) {
         // 2_147_483_647 max int value
+        int n = 0;
+        n = 1_117_483_647;	// первый тест
+        System.out.println(n +" -> "+ ConvertNumberToString(n));
+        n = 17_483_647;		// второй тест
+        System.out.println(n +" -> "+  ConvertNumberToString(n));
+        n = 483_647;		// третий тест
+        System.out.println(n +" -> "+  ConvertNumberToString(n));
+        n = -2_117_483_647; // четвертый тест
+        System.out.println(n +" -> "+  ConvertNumberToString(n));
 
-        int n = 1_117_483_647;
-        //n = -2_117_483_647;
 
-        System.out.println( ConvertNumberToString(n));
 
     }// main
-//##################################################################################################
+    //##################################################################################################
 //##################################################################################################
     public static String ConvertNumberToString(int n){
 
@@ -77,7 +86,7 @@ public class Program {
             sb.delete(0, sb.length());
             return result;
         }else
-            return "введите положительное число 1 до 2_117_483_647";
+            return "введите положительное число от 1 до 2_117_483_647";
     }
 
     public static String digit_rank_fun(String str_1, String rank){// формируем разряды
@@ -88,9 +97,9 @@ public class Program {
         String st_3 = String.valueOf(array_result[2]);// единицы
 
         if (false){
-        System.out.print(st_1);
-        System.out.print(st_2);
-        System.out.println(st_3);}
+            System.out.print(st_1);
+            System.out.print(st_2);
+            System.out.println(st_3);}
 
         StringBuffer SB = new StringBuffer(3);
         if (str_1.matches("[0-9][0][0-9]")){
@@ -117,11 +126,11 @@ public class Program {
     }
     public static void hundred_fun(String st_1, StringBuffer SB){// формируем сотни разряда
         if(!st_1.equals("0"))
-        for (int i1 = 0; i1 < arr_num_1.length; i1++) {
-            if (st_1.equals(arr_num_1[i1][0])){
-                SB.append(" ").append(arr_num_1[i1][1]).append(" hundred");
+            for (int i1 = 0; i1 < arr_num_1.length; i1++) {
+                if (st_1.equals(arr_num_1[i1][0])){
+                    SB.append(" ").append(arr_num_1[i1][1]).append(" hundred");
+                }
             }
-        }
     }
     public static void tens_and_units_fun(String st_2, String st_3, StringBuffer SB){// формируем десятки и единицы разряда
         if(st_2.equals("1")){// если в десятках разряда есть единица, то прогоняем по массиву arr_num_3[][] без присоединения единиц
