@@ -8,7 +8,7 @@ public class Program {
     static String arr_num_3[][] = {{"11","eleven"},{"12","twelve"},{"13","thirteen"},{"14","fourteen"},{"15","fifteen"},{"16","sixteen"},{"17","seventeen"},{"18","eighteen"},{"19","nineteen"},};
 
 	// под классами числа понимаются: миллиардов, миллионов, тысяч, единиц.
-	// под под разрядом понимаются: сотни, десятки, единицы. 
+	// под под разрядом числа понимается: сотни, десятки, единицы. 
 
     public static void main(String[] args) {
         // 2_147_483_647 max int value
