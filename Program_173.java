@@ -59,13 +59,13 @@ class Program_173{
     }
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //    Функция вставляет узел в конец связанного списка
-    private void insert_last(int key){  // insert at end of list
-        list_node newLink = new list_node(key);   // make new link
-        if(first ==null)                // if empty list,
-            first = newLink;            // first --> newLink
+    private void insert_last(int key){
+        list_node newLink = new list_node(key);   // создать новую ссылку
+        if(first ==null)
+            first = newLink;
         else
-            last.next = newLink;        // old last --> newLink
-        last = newLink;                // newLink <-- last
+            last.next = newLink;
+        last = newLink;
         general_count++;
     }
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -77,7 +77,7 @@ class Program_173{
 
         while(current != null && key >= current.data){
             previous = current;
-            current = current.next;
+            current = current.next; // к след. ссылке
         }
         if(previous==null)
             first = newLink;
@@ -104,7 +104,7 @@ class Program_173{
         while(current != null){
             array[count] = current;
             count++;
-            current = current.next;  // move to next link
+            current = current.next;  // к след. ссылке
         }
         return array;
     }
@@ -113,9 +113,9 @@ class Program_173{
     public void display_list(){
         list_node current = first;
         while(current != null){
-//            current.display_link();   // print data
+//            current.display_link();   //
             System.out.print( current.data + " ");
-            current = current.next;  // move to next link
+            current = current.next;  // к след. ссылке
         }
         System.out.println();
     }
